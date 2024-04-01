@@ -9,11 +9,11 @@ jobs:
  deploy-laravel:
   runs-on: ubuntu-latest
   steps:
-    - uses: actions/checkoutgv2
+    - uses: actions/checkout@v2
     - name: Deploy to server
       uses: appleboy/ssh-action@v1.0.3
       with:
-       host:${{ secrets.HOST }}
-       username:${{ secrets.USERNAME }}
-       key:${{ secrets.SSHKEY }}
-       script:"cd /home/ubuntu/devops && ./deploy.sh"
+       host: ${{ secrets.HOST }}
+       username: ${{ secrets.USERNAME }}
+       key: ${{ secrets.SSHKEY }}
+       script: "cd /home/ubuntu/devops && ./deploy.sh"
